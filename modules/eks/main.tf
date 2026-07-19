@@ -19,4 +19,12 @@ resource "aws_eks_cluster" "eks" {
     aws_iam_role_policy_attachment.cluster_policy
   ]
 
+  encryption_config {
+  provider {
+    key_arn = local.kms_key_arn
+  }
+
+  resources = ["secrets"]
+}
+
 }

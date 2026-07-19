@@ -2,6 +2,11 @@ variable "cluster_name" {
   type = string
 }
 
+variable "environment" {
+  description = "Deployment environment"
+  type        = string
+}
+
 variable "kubernetes_version" {
   type = string
 }
@@ -74,4 +79,16 @@ variable "enabled_cluster_log_types" {
     "controllerManager",
     "scheduler"
   ]
+}
+
+variable "create_kms_key" {
+  description = "Create a new KMS key for EKS secrets encryption"
+  type        = bool
+  default     = true
+}
+
+variable "kms_key_arn" {
+  description = "Existing KMS Key ARN. Used when create_kms_key is false."
+  type        = string
+  default     = null
 }

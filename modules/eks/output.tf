@@ -25,3 +25,13 @@ output "oidc_provider_arn" {
 output "oidc_provider_url" {
   value = aws_iam_openid_connect_provider.oidc.url
 }
+
+output "kms_key_arn" {
+  description = "KMS Key ARN used for EKS Secrets encryption"
+  value       = local.kms_key_arn
+}
+
+output "kms_key_id" {
+  description = "KMS Key ID"
+  value       = var.create_kms_key ? aws_kms_key.eks[0].key_id : null
+}
