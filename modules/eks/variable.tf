@@ -49,3 +49,15 @@ variable "node_groups" {
     })), [])
   }))
 }
+
+variable "cluster_endpoint_public_access" {
+  description = "Enable public access to the Kubernetes API server"
+  type        = bool
+  default     = true
+}
+
+variable "cluster_endpoint_private_access" {
+  description = "Enable private access to the Kubernetes API server"
+  type        = bool
+  default     = true
+}
