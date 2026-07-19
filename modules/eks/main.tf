@@ -3,9 +3,7 @@ resource "aws_eks_cluster" "eks" {
   version = var.kubernetes_version
   role_arn = aws_iam_role.cluster.arn
 
-  enabled_cluster_log_types = [
-    "api", "audit",
-  ]
+  enabled_cluster_log_types = var.enabled_cluster_log_types
 
   compute_config {
     enabled = false

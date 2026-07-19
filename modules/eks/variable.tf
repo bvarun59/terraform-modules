@@ -61,3 +61,17 @@ variable "cluster_endpoint_private_access" {
   type        = bool
   default     = true
 }
+
+variable "enabled_cluster_log_types" {
+  description = "Control plane logs to enable"
+
+  type = list(string)
+
+  default = [
+    "api",
+    "audit",
+    "authenticator",
+    "controllerManager",
+    "scheduler"
+  ]
+}
