@@ -3,15 +3,6 @@ variable "cluster_name" {
   type        = string
 }
 
-variable "cluster_endpoint" {
-  description = "EKS API Endpoint"
-  type        = string
-}
-
-variable "cluster_ca_certificate" {
-  description = "Cluster CA Certificate"
-  type        = string
-}
 
 variable "oidc_provider_arn" {
   description = "OIDC Provider ARN"
